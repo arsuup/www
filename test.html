@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/login.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="login">
+        <p id="title">Se connecter</p>
+        <button id="switchButton">Register</button>
+    </div>
+
+    <div id="register" style="display: none;">
+        <p id="title">S'enregistrer</p>
+        <button id="switchButton2">Login</button>
+    </div>
+
+    <script>
+        var divState = 1;
+    
+        function toggleDivs() {
+            var div1 = document.getElementById('login');
+            var div2 = document.getElementById('register');
+    
+            if (divState === 1) {
+                div1.style.display = "none";
+                div2.style.display = "flex";
+                divState = 2;
+            } else {
+                div1.style.display = "flex";
+                div2.style.display = "none";
+                divState = 1;
+            }
+        }
+    
+        document.getElementById('switchButton').addEventListener('click', toggleDivs);
+        document.getElementById('switchButton2').addEventListener('click', toggleDivs);
+    </script>    
+</body>
+</html>
